@@ -14,4 +14,23 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+// read function
+function readuserdata(userid){
+    const starCountRef = ref(db, 'users/' +  userid );
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      console.log(data);
+    });
 
+}
+// write function
+function writeuserdata(userId, name, email) {
+    const db = getDatabase();
+    set(ref(db, 'users/' + userId), {
+      username: name,
+      email: email,
+    });
+  }
+
+export {readuserdata,writeuserdata};
+  
