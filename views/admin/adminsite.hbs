@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/maincss.css" />
+  </head>
+  <body>
+    <div class="navbar">
+        <img src="/nitlogofinal.png" alt="no image">
+        <h1>National Institute of Technology AP: internship project: 4th semester</h3>
+    </div>
+    <div class="container">
+      <h1 style="text-align:center;">allocate salary to employee here</h1>
+       <a href="/administration/logout"><button class="submitbtn">log out</button></a>
+      <form
+        class="form-container"
+        action="/administration/salaryallot"
+        method="post"
+      >
+        <label for=""><h3>select employee name:</h3></label>
+        <select name="name" class="isinput" id="">  
+          {{#each user}}
+            <option value={{name}}>{{name}}</option>
+          {{/each}}
+        </select>
+        <input
+          class="isinput"
+          type="number"
+          name="salary"
+          id="salary"
+          placeholder="enter salary here"
+        />
+        <input
+          class="isinput"
+          type="month"
+          name="month"
+          id="month"
+          placeholder="enter month here"
+        />
+        <button class="submitbtn" type="submit" value="data-entry">submit data</button>
+      </form>
+    </div>
+    <div class="container">
+      <h1 style="text-align:center;">create new employee account here</h1>
+      <form
+        action="/administration/createemploy"
+        class="form-container"
+        method="post"
+      >
+        <input
+          type="text"
+          class="isinput"
+          name="name"
+          id="name"
+          placeholder="enter employ name"
+        />
+        <input
+          type="password"
+          class="isinput"
+          name="password"
+          id="password"
+          placeholder="set employ password"
+        />
+        <input
+          type="password"
+          class="isinput"
+          name="cpassword"
+          placeholder="confirm password"
+        />
+        <button class="submitbtn" class="submitbtn" type="submit">create account</button>
+      </form>
+    </div>
+
+  </body>
+</html>

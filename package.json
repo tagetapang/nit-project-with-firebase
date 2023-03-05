@@ -20,6 +20,8 @@
   "homepage": "https://github.com/tagetapang/nit-project-with-firebase#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "firebase": "^9.17.2"
+    "firebase": "^9.17.2",
+    "handlebars": "^4.7.7",
+    "path": "^0.12.7"
   }
 }
